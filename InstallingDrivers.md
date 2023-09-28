@@ -160,13 +160,14 @@ For Vulkan support on NVIDIA drivers also run:
 
 Add the following lines to your NixOS hardware config, by default it should be at ``/etc/nixos/hardware-configuration.nix``
 
-``boot.initrd.kernelModules = [ "amdgpu" ];``
+```boot.initrd.kernelModules = [ "amdgpu" ];```
 
 To use the amdgpu graphics driver on XServer, add the following lines to your NixOS config, by default it should be at ``/etc/nixos/configuration.nix`` (customize as you prefer)
 
-``services.xserver.enable = true;`` (to enable the xorg server)
-``services.xserver.videoDrivers = [ "amdgpu" ];`` (to load the amdgpu kernel module)
-
+```
+services.xserver.enable = true; # to enable the xorg server
+services.xserver.videoDrivers = [ "amdgpu" ]; # to load the amdgpu kernel module
+```
 ## NVIDIA
 
 Add the following lines to your NixOS hardware configuration, by default it should be at ``/etc/nixos/hardware-configuration.nix``
