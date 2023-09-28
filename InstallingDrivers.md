@@ -171,8 +171,10 @@ To use the amdgpu graphics driver on XServer, add the following lines to your Ni
 
 Add the following lines to your NixOS hardware configuration, by default it should be at ``/etc/nixos/hardware-configuration.nix``
 
-``boot.initrd.kernelModules = [ "nvidia" ];`` 
-
+```
+boot.initrd.kernelModules = [ "nvidia" ]; 
+blacklistedKernelModules = ["nouveau"];
+```
 Add the following lines to your NixOS configuration, by default it should be at ``/etc/nixos/configuration.nix`` (customize as you prefer)
 
 ```
